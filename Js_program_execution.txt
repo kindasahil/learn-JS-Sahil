@@ -1,0 +1,32 @@
+In browser global execution object run as *window Object* 
+whenever {} code is run in Javascript it will run a Global execution context it will store in this keyword
+
+Javascript Execution Context
+{} Global Execution Context <-----by This keyword
+
+-->Global Execution Context
+-->Function Execution Context
+-->Eval Execution Context
+
+There are 3 steps of Executing program (Run single threaded javaScript Program)
+
+1. Global Execution <--This
+2. Memory Creation Phase(MP)
+3. Execution Phase
+
+
+Memory Phase 
+variables are undefined (Ex- val1 -> Undefined in memory fisrt)
+functions and methods are defined (Ex- addnum -> Defination process)
+
+execution phase
+
+values are defined to variables (Ex - val1 = 10)
+(new variable Environment + execution Thread)
+and functions are re-process same way Memory phase one by one all variables and then execution phase one by one
+
+and if one function is having another function in it so in stack it follows LiFo for execution process
+
+a->b->c
+
+
