@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Api Request one</title>
+        <style>
+            .card {
+                background-color: coral;
+                padding: 1rem;
+                border-radius: 10px;
+                max-width: 20%;
+            }
+            .card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lets go learn API Request</h1>
+        <div class="card">
+            <img src="" alt="" />
+            <p>Followers: <span>0</span></p>
+        </div>
+    </body>
+    <script>
+        console.log("Hey")
+        const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET", requestUrl)
+        xhr.onreadystatechange = function (e) {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText)
+
+                const imgUrl = data.avatar_url
+                const followerCount = data.followers
+
+                const imgEl = document.querySelector("img")
+                const spanEl = document.querySelector("p > span")
+
+                imgEl.setAttribute("src", imgUrl)
+                spanEl.innerHTML = followerCount
+            }
+        }
+        xhr.send()
+        console.log("Here")
+    </script>
+</html>
